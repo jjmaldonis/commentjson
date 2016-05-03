@@ -55,8 +55,8 @@ def loads(text, **kwargs):
 
     try:
         return json.loads('\n'.join(lines), **kwargs)
-    except Exception, e:
-        raise JSONLibraryException(e.message)
+    except Exception as error:
+        raise JSONLibraryException(error.message)
 
 
 def dumps(obj, **kwargs):
@@ -72,8 +72,8 @@ def dumps(obj, **kwargs):
 
     try:
         return json.dumps(obj, **kwargs)
-    except Exception, e:
-        raise JSONLibraryException(e.message)
+    except Exception as error:
+        raise JSONLibraryException(error.message)
 
 
 def load(fp, **kwargs):
@@ -90,8 +90,8 @@ def load(fp, **kwargs):
 
     try:
         return loads(fp.read(), **kwargs)
-    except Exception, e:
-        raise JSONLibraryException(e.message)
+    except Exception as error:
+        raise JSONLibraryException(error.message)
 
 
 def dump(obj, fp, **kwargs):
@@ -109,5 +109,6 @@ def dump(obj, fp, **kwargs):
 
     try:
         json.dump(obj, fp, **kwargs)
-    except Exception, e:
-        raise JSONLibraryException(e.message)
+    except Exception as error:
+        raise JSONLibraryException(error.message)
+
